@@ -5,3 +5,11 @@
 -- Порядок: year по возрастанию
 -- Строк:   10
 
+SELECT
+    extract(year FROM started_at) AS year,
+    count(match_id) AS matches,
+    count(tournament_id) AS tournament_matches
+FROM matches
+GROUP BY year
+ORDER BY year ASC
+LIMIT 10;
