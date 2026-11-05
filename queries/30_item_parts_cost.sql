@@ -6,3 +6,40 @@
 -- Порядок: diff по убыванию, при равенстве name по возрастанию
 -- Строк:   77
 
+WITH RECURSIVE assembly_tree AS (
+    SELECT
+        ir.item_id AS root_id,
+        ir.component_id,
+        ir.quantity AS qty_total
+    FROM item_recipe ir
+  UNION ALL
+    SELECT
+        tr.root_id,
+        ir.component_id,
+        tr.qty_total * ir.quantity
+    FROM assembly_tree tr
+    JOIN item_recipe ir ON ir.item_id = tr.component_id
+), leaf_totals AS (
+    SELECT
+        tr.root_id,
+        sum(tr.qty_total * c.cost) AS parts_cost,
+        sum(tr.qty_total) AS base_parts
+    FROM assembly_tree tr
+    JOIN items c ON c.item_id = tr.component_id
+    WHERE NOT EXISTS (
+        SELECT 1
+        FROM item_recipe ir
+        WHERE ir.item_id = tr.component_id
+    )
+    GROUP BY tr.root_id
+)
+SELECT
+    i.name,
+    i.cost,
+    lt.parts_cost,
+    lt.base_parts,
+    lt.parts_cost - i.cost AS diff
+FROM leaf_totals lt
+JOIN items i ON i.item_id = lt.root_id
+ORDER BY diff DESC, name ASC
+LIMIT 77;
