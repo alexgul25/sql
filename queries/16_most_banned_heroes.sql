@@ -20,11 +20,11 @@ WITH bans_count AS (
 )
 SELECT 
     h.name AS hero,
-    coalesce(bc.bans, 0) AS bans,
-    coalesce(pc.picks, 0) AS picks,
+    bc.bans AS bans,
+    pc.picks AS picks,
     round(bc.bans::numeric / pc.picks, 2) AS bans_per_pick
 FROM heroes h
-LEFT JOIN bans_count bc ON bc.hero_id = h.hero_id
-LEFT JOIN picks_count pc ON pc.hero_id = h.hero_id
+JOIN bans_count bc ON bc.hero_id = h.hero_id
+JOIN picks_count pc ON pc.hero_id = h.hero_id
 ORDER BY bans DESC, hero ASC
 LIMIT 10;
