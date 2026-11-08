@@ -29,5 +29,4 @@ SELECT
     (SELECT count(match_id) FROM matches WHERE tournament_id = tp.tournament_id) AS matches_played
 FROM tournament_prevs tp
 WHERE tp.prize_pool > tp.prev_total
-ORDER BY started_at
-LIMIT 2;
+ORDER BY started_at;

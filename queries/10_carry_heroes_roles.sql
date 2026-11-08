@@ -13,5 +13,4 @@ SELECT
 FROM heroes h
 JOIN hero_roles hr ON h.hero_id = hr.hero_id AND hr.role = 'carry'
 JOIN hero_roles hr2 ON hr2.hero_id = hr.hero_id
-ORDER BY h.name ASC, hr2.role ASC
-LIMIT 47;
+ORDER BY h.name ASC, hr2.role ASC;

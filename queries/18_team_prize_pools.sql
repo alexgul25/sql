@@ -26,5 +26,4 @@ FROM teams tm
 JOIN team_tournaments tt ON tt.team_id = tm.team_id
 JOIN tournaments t ON t.tournament_id = tt.tournament_id
 GROUP BY tm.team_id
-ORDER BY prize_total DESC, team ASC
-LIMIT 22;
+ORDER BY prize_total DESC, team ASC;

@@ -41,5 +41,4 @@ SELECT
     lt.parts_cost - i.cost AS diff
 FROM leaf_totals lt
 JOIN items i ON i.item_id = lt.root_id
-ORDER BY diff DESC, name ASC
-LIMIT 77;
+ORDER BY diff DESC, name ASC;

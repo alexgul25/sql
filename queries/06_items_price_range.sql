@@ -8,5 +8,4 @@
 SELECT name, cost
 FROM items
 WHERE cost BETWEEN 2000 AND 3000 AND NOT is_recipe
-ORDER BY cost DESC, name ASC
-LIMIT 29;
+ORDER BY cost DESC, name ASC;

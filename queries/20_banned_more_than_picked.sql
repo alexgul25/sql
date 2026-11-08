@@ -33,5 +33,4 @@ JOIN heroes h ON h.hero_id = hb.hero_id
 JOIN patches p ON p.patch_id = hb.patch_id
 LEFT JOIN hero_picks_by_patch hp ON hp.hero_id = hb.hero_id AND hp.patch_id = hb.patch_id
 WHERE hb.bans > coalesce(hp.picks, 0)
-ORDER BY diff DESC, hero ASC, version ASC
-LIMIT 99;
+ORDER BY diff DESC, hero ASC, version ASC;

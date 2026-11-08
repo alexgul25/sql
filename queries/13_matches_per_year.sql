@@ -11,5 +11,4 @@ SELECT
     count(tournament_id) AS tournament_matches
 FROM matches
 GROUP BY year
-ORDER BY year ASC
-LIMIT 10;
+ORDER BY year ASC;

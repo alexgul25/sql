@@ -25,5 +25,4 @@ JOIN platform_avg_followers paf ON paf.platform_id = p.platform_id
 LEFT JOIN team_members tm ON tm.player_id = s.player_id AND tm.left_at IS NULL
 LEFT JOIN teams t ON t.team_id = tm.team_id
 WHERE s.followers > paf.avg_followers
-ORDER BY followers DESC, streamer ASC
-LIMIT 16;
+ORDER BY followers DESC, streamer ASC;

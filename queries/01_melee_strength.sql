@@ -8,5 +8,4 @@
 SELECT hero_id, name, legs
 FROM heroes
 WHERE primary_attr = 'str' AND attack_type = 'melee'
-ORDER BY name ASC
-LIMIT 11;
+ORDER BY name ASC;

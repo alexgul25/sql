@@ -27,5 +27,4 @@ LEFT JOIN team_members tm ON tm.player_id = s.player_id AND tm.left_at IS NULL
 LEFT JOIN teams t ON t.team_id = tm.team_id
 LEFT JOIN player_games_count pgc ON pgc.player_id = s.player_id
 WHERE coalesce(pgc.pudge_games, 0) = 0 AND s.player_id IS NOT NULL 
-ORDER BY followers DESC, streamer ASC
-LIMIT 8;
+ORDER BY followers DESC, streamer ASC;

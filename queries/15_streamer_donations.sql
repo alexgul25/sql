@@ -26,5 +26,4 @@ JOIN platforms p ON st.platform_id = p.platform_id
 LEFT JOIN team_members tm ON st.player_id = tm.player_id AND tm.left_at IS NULL
 LEFT JOIN teams t ON tm.team_id = t.team_id
 LEFT JOIN d ON d.streamer_id = st.streamer_id
-ORDER BY total_amount DESC, streamer ASC
-LIMIT 40;
+ORDER BY total_amount DESC, streamer ASC;

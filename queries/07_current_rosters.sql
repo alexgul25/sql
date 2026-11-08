@@ -15,5 +15,4 @@ FROM players p
 JOIN team_members tm ON p.player_id = tm.player_id
 JOIN teams t ON tm.team_id = t.team_id
 WHERE tm.left_at IS NULL
-ORDER BY tm.joined_at ASC, p.nickname ASC
-LIMIT 86;
+ORDER BY tm.joined_at ASC, p.nickname ASC;

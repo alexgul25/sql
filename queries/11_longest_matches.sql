@@ -14,5 +14,4 @@ SELECT
 FROM matches m
 LEFT JOIN tournaments t ON m.tournament_id = t.tournament_id
 WHERE m.duration_sec >= 4700
-ORDER BY m.duration_sec DESC, m.match_id ASC
-LIMIT 56;
+ORDER BY m.duration_sec DESC, m.match_id ASC;

@@ -31,5 +31,4 @@ SELECT
     peak_viewers - prev_peak AS delta
 FROM vk_prev_peaks
 WHERE prev_peak IS NOT NULL
-ORDER BY followers DESC, started_at ASC
-LIMIT 592;
+ORDER BY followers DESC, started_at ASC;

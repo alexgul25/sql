@@ -14,5 +14,4 @@ SELECT
 FROM patches p
 JOIN matches m ON m.patch_id = p.patch_id
 GROUP BY p.patch_id
-ORDER BY radiant_winrate DESC, version ASC
-Limit 12;
+ORDER BY radiant_winrate DESC, version ASC;

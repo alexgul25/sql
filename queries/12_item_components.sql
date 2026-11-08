@@ -19,5 +19,4 @@ WHERE EXISTS (
     FROM item_recipe ir2
     WHERE ir2.item_id = ir.component_id
 )
-ORDER BY item_name ASC, component_name ASC
-LIMIT 36; 
+ORDER BY item_name ASC, component_name ASC; 

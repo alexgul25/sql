@@ -15,5 +15,4 @@ FROM match_players mp
 JOIN heroes h ON h.hero_id = mp.hero_id
 GROUP BY h.hero_id
 HAVING count(mp.hero_id) >= 420
-ORDER BY avg_kills DESC, hero ASC
-LIMIT 29;
+ORDER BY avg_kills DESC, hero ASC;

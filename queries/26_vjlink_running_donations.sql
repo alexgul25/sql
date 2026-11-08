@@ -27,5 +27,4 @@ SELECT
     ) AS running_total
 FROM stream_donations sd
 JOIN vjlink_streams vs ON vs.stream_id = sd.stream_id
-ORDER BY stream_id ASC, sent_at_sec ASC, sd.donation_id ASC
-LIMIT 192;
+ORDER BY stream_id ASC, sent_at_sec ASC, sd.donation_id ASC;

@@ -29,5 +29,4 @@ JOIN country_mmr_rank cr ON cr.player_id = s.player_id
 JOIN team_members tm ON tm.player_id = s.player_id AND tm.left_at IS NULL
 JOIN teams t ON t.team_id = tm.team_id
 JOIN platforms p ON p.platform_id = s.platform_id
-ORDER BY country ASC, country_rank ASC
-LIMIT 16;
+ORDER BY country ASC, country_rank ASC;

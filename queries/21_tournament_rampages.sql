@@ -27,5 +27,4 @@ JOIN tournaments t ON t.tournament_id = m.tournament_id
 JOIN players p ON p.player_id = mpk.player_id
 JOIN heroes h ON h.hero_id = mpk.hero_id
 WHERE mpk.kda > 6 * (SELECT avg(kda) FROM match_players_kda)
-ORDER BY kda DESC, match_id ASC, mpk.slot ASC
-LIMIT 60;
+ORDER BY kda DESC, match_id ASC, mpk.slot ASC;

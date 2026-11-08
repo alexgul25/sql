@@ -8,5 +8,4 @@
 SELECT DISTINCT country
 FROM players
 WHERE mmr >= 10000
-ORDER BY country ASC
-LIMIT 15;
+ORDER BY country ASC;

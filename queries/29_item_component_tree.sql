@@ -40,5 +40,4 @@ SELECT
     qty_total,
     path
 FROM component_tree
-ORDER BY root_item ASC, path ASC
-LIMIT 34;
+ORDER BY root_item ASC, path ASC;

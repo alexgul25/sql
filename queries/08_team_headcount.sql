@@ -16,5 +16,4 @@ LEFT JOIN team_members tm ON t.team_id = tm.team_id AND tm.left_at IS NULL
 LEFT JOIN players p ON p.player_id = tm.player_id
 LEFT JOIN streamers s ON s.player_id = p.player_id
 GROUP BY t.team_id
-ORDER BY players_now DESC, t.name ASC
-LIMIT 24;
+ORDER BY players_now DESC, t.name ASC;

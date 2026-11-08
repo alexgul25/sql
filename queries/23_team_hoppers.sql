@@ -25,5 +25,4 @@ LEFT JOIN team_members tm ON tm.player_id = p.player_id AND tm.left_at IS NULL
 LEFT JOIN teams t ON t.team_id = tm.team_id
 LEFT JOIN streamers s ON s.player_id = p.player_id
 WHERE ptc.teams_count > 1
-ORDER BY teams_count DESC, player ASC
-LIMIT 25;
+ORDER BY teams_count DESC, player ASC;
