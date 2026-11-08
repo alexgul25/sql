@@ -26,8 +26,8 @@ SELECT
     p.version,
     h.name AS hero,
     hb.bans,
-    hp.picks,
-    hb.bans - hp.picks AS diff
+    coalesce(hp.picks, 0) AS picks,
+    hb.bans - coalesce(hp.picks, 0) AS diff
 FROM hero_bans_by_patch hb
 JOIN heroes h ON h.hero_id = hb.hero_id
 JOIN patches p ON p.patch_id = hb.patch_id
