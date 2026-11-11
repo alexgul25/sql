@@ -5,3 +5,14 @@
 -- Порядок: avg_kills (округлённое) по убыванию, при равенстве hero по возрастанию
 -- Строк:   29
 
+SELECT
+    h.name AS hero,
+    count(mp.hero_id) AS games,
+    round(avg(mp.kills)::numeric, 2) AS avg_kills,
+    round(avg(mp.deaths)::numeric, 2) AS avg_deaths,
+    round(avg(mp.assists)::numeric, 2) AS avg_assists
+FROM match_players mp
+JOIN heroes h ON h.hero_id = mp.hero_id
+GROUP BY h.hero_id
+HAVING count(mp.hero_id) >= 420
+ORDER BY avg_kills DESC, hero ASC;
